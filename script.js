@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hàm để mở Modal
     function openModal(title, description, imageSrc) {
         modalTitle.textContent = title;
-        modalDescription.textContent = description;
+        modalDescription.innerHTML = description;
         modalImage.src = imageSrc;
         modalOverlay.classList.remove('hidden'); // Hiển thị modal
     }
