@@ -1,14 +1,12 @@
 // Chờ cho toàn bộ nội dung HTML được tải xong rồi mới chạy code
 document.addEventListener('DOMContentLoaded', function() {
 
-   // --- BẮT ĐẦU CODE MỚI THÊM VÀO ---
-    // Tự động nhân đôi các dự án để tạo vòng lặp vô tận
-    const carousel = document.querySelector('.project-carousel');
-    const originalItems = carousel.querySelectorAll('.project-item'); // Lấy các item gốc
+   const carousel = document.querySelector('.project-carousel');
+    const originalItems = carousel.querySelectorAll('.project-item'); 
 
     originalItems.forEach(item => {
         const clone = item.cloneNode(true); // Sao chép (clone) 1 item
-        carousel.appendChild(clone); // Dán item đã sao chép vào cuối carousel
+        carousel.appendChild(clone); // Dán item đã sao chép vào cuối
     });
    
    
