@@ -8,7 +8,67 @@ document.addEventListener('DOMContentLoaded', function() {
         const clone = item.cloneNode(true); // Sao chép (clone) 1 item
         carousel.appendChild(clone); // Dán item đã sao chép vào cuối
     });
-   
+   // Lấy tất cả các carousel ảnh kinh nghiệm
+const allExpCarousels = document.querySelectorAll('.exp-image-carousel');
+
+allExpCarousels.forEach(carouselWrapper => {
+    const track = carouselWrapper.querySelector('.exp-carousel-track');
+    const images = track.querySelectorAll('img');
+    const dotsContainer = carouselWrapper.querySelector('.exp-carousel-dots');
+    let currentIndex = 0;
+    let slideInterval; // Biến để lưu trữ ID của interval
+
+    // Tạo các chấm chỉ báo
+    images.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('exp-dot');
+        if (index === 0) {
+            dot.classList.add('active');
+        }
+        dot.addEventListener('click', () => {
+            clearInterval(slideInterval); // Dừng auto-slide khi click chấm
+            currentIndex = index;
+            updateCarousel();
+            startAutoSlide(); // Bắt đầu lại auto-slide sau khi click
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.exp-dot');
+
+    // Hàm cập nhật vị trí carousel và trạng thái chấm
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    // Hàm tự động trượt ảnh
+    function startAutoSlide() {
+        slideInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateCarousel();
+        }, 3000); // Trượt sau mỗi 3 giây (3000ms)
+    }
+
+    // Bắt đầu tự động trượt khi tải trang
+    startAutoSlide();
+
+    // Dừng tự động trượt khi rê chuột vào carousel
+    carouselWrapper.addEventListener('mouseenter', () => {
+        clearInterval(slideInterval);
+    });
+
+    // Tiếp tục tự động trượt khi rê chuột ra khỏi carousel
+    carouselWrapper.addEventListener('mouseleave', () => {
+        startAutoSlide();
+    });
+});
    
     // Lấy các phần tử (elements) cần thiết từ HTML
     const modalOverlay = document.getElementById('project-modal');

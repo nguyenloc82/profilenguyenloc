@@ -56,7 +56,174 @@ body {
     font-size: 1em;
 }
 
-/* Phần dự án */
+/* --- PHẦN LIÊN HỆ (SOCIAL LINKS) --- */
+
+.social-links {
+    margin-top: 25px; /* Tạo khoảng cách với phần bio */
+}
+
+.social-btn {
+    display: inline-block; /* Xếp các nút nằm ngang */
+    width: 45px;
+    height: 45px;
+    line-height: 45px; /* Căn giữa icon theo chiều dọc */
+    text-align: center; /* Căn giữa icon theo chiều ngang */
+    margin: 0 10px;
+    border-radius: 50%; /* Tạo hình tròn */
+    background-color: #e9e9e9; /* Màu nền mặc định */
+    color: #333; /* Màu icon mặc định */
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    overflow: hidden; /* Ẩn phần thừa của ảnh Zalo nếu nó không tròn */
+}
+
+/* Căn chỉnh cho TẤT CẢ icon (vì chúng đều là ảnh) */
+.social-btn img {
+    width: 100%; /* Cho ảnh lấp đầy nút tròn */
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh vừa vặn, không bị méo */
+    vertical-align: middle; /* Căn ảnh vào giữa */
+
+}
+    
+/* Hiệu ứng HOVER (khi đưa chuột vào) */
+.social-btn:hover {
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Màu thương hiệu khi hover */
+.social-btn.facebook:hover {
+    background-color: #1877F2; /* Màu Facebook */
+}
+
+.social-btn.zalo:hover {
+    background-color: #0068FF; /* Màu Zalo */
+}
+
+.social-btn.call:hover {
+    background-color: #4CAF50; /* Màu Call (Xanh lá) */
+}
+
+/* --- PHẦN KINH NGHIỆM TRONG PROFILE (LAYOUT MỚI) --- */
+
+.profile-experience {
+    /* Mở rộng tối đa để hiển thị layout mới */
+    max-width: 800px; 
+    margin: 40px auto 0;
+    text-align: left; 
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+.profile-experience h2 {
+    text-align: center;
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 30px; /* Tăng khoảng cách cho thoáng */
+}
+
+/* Mỗi khối kinh nghiệm (Item) */
+.exp-item {
+    display: flex; /* Dùng Flexbox để chia cột */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-bottom: 30px; /* Khoảng cách giữa các khối kinh nghiệm */
+    gap: 25px; /* Khoảng cách giữa ảnh và chữ */
+}
+
+/* Cột chứa ảnh */
+.exp-image {
+    flex-basis: 40%; /* Ảnh chiếm 40% chiều rộng */
+    flex-shrink: 0; /* Không cho ảnh bị co lại */
+}
+
+.exp-image img {
+    width: 100%;
+    border-radius: 8px; /* Bo góc ảnh */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: block; /* Bỏ khoảng trắng thừa dưới ảnh */
+}
+
+/* Cột chứa chữ */
+.exp-text {
+    flex-basis: 60%; /* Chữ chiếm 60% chiều rộng */
+}
+
+.exp-text p {
+    font-size: 1em;
+    line-height: 1.7; /* Dãn dòng cho dễ đọc */
+    color: #444;
+    margin-bottom: 15px; /* Khoảng cách giữa các đoạn văn */
+}
+
+.exp-text p:last-child {
+    margin-bottom: 0; /* Bỏ khoảng cách ở đoạn văn cuối */
+}
+
+/* --- HẾT PHẦN PROFILE --- */
+
+
+/* --- PHẦN HỘP ĐIỀU HƯỚNG (NAVIGATION BOXES) --- */
+/* (Nằm giữa Profile và Projects) */
+
+.navigation-boxes {
+    display: flex; /* Xếp 3 hộp nằm ngang */
+    justify-content: space-between; /* Căn đều 3 hộp */
+    flex-wrap: wrap; /* Cho phép xuống dòng nếu màn hình quá nhỏ */
+    gap: 20px; /* Khoảng cách giữa các hộp */
+    margin: 30px 0; /* Khoảng cách trên dưới */
+    padding-bottom: 30px;
+    border-bottom: 2px solid #eee; /* Đường kẻ phân cách */
+}
+
+.nav-box {
+    width: 30%; /* Mỗi hộp chiếm khoảng 1/3, trừ hao gap */
+    min-width: 250px; /* Độ rộng tối thiểu trước khi vỡ */
+    text-decoration: none; /* Bỏ gạch chân của link */
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-box:hover {
+    transform: translateY(-5px); /* Nhấc hộp lên khi hover */
+}
+
+.nav-box-img {
+    width: 100%;
+    height: 220px; /* Đặt chiều cao cố định */
+    object-fit: cover; /* Đảm bảo ảnh lấp đầy, không bị méo */
+    display: block;
+    border-radius: 8px; /* Bo góc ảnh */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Đổ bóng nhẹ cho ảnh */
+    transition: box-shadow 0.3s ease;
+}
+
+.nav-box:hover .nav-box-img {
+     box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Đổ bóng đậm hơn khi hover */
+}
+
+.nav-box-title {
+    display: block; /* Biến thành khối */
+    text-align: center; /* Căn giữa chữ */
+    margin-top: 15px; /* Khoảng cách với ảnh */
+    padding: 12px 15px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: 1px solid #ddd; /* Viền xám nhạt như trong hình */
+    border-radius: 8px; /* Bo góc nút */
+    background-color: #fdfdfd;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-box:hover .nav-box-title {
+    background-color: #f5f5f5; /* Đổi màu nền khi hover */
+    border-color: #bbb;
+}
+
+/* --- PHẦN DỰ ÁN (PROJECTS) --- */
+
 .projects {
     text-align: center;
     padding-top: 20px;
@@ -81,7 +248,7 @@ body {
 */
 .project-carousel {
     display: flex;
-   
+    /* Dòng 'width' đã bị xóa để JS tự động xử lý */
     animation: scroll 30s linear infinite;
 }
 
@@ -207,61 +374,86 @@ body {
 
 #modal-title {
     margin-bottom: 15px;
-
-}
-/* --- PHẦN LIÊN HỆ (SOCIAL LINKS) --- */
-
-.social-links {
-    margin-top: 25px; /* Tạo khoảng cách với phần bio */
 }
 
-.social-btn {
-    display: inline-block; /* Xếp các nút nằm ngang */
-    width: 45px;
-    height: 45px;
-    line-height: 45px; /* Căn giữa icon theo chiều dọc */
-    text-align: center; /* Căn giữa icon theo chiều ngang */
-    margin: 0 10px;
-    border-radius: 50%; /* Tạo hình tròn */
-    background-color: #e9e9e9; /* Màu nền mặc định */
-    color: #333; /* Màu icon mặc định */
-    font-size: 18px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    overflow: hidden; /* Ẩn phần thừa của ảnh Zalo nếu nó không tròn */
+/* --- TÙY CHỈNH CHO MÀN HÌNH NHỎ (RESPONSIVE) --- */
+/* (Phần này để layout kinh nghiệm hiển thị đẹp trên điện thoại) */
+@media (max-width: 768px) {
+    .exp-item {
+        flex-direction: column; /* Xếp chồng lên nhau: ảnh ở trên, chữ ở dưới */
+        align-items: flex-start; /* Căn trái */
+    }
+
+    /* 2 cột đều chiếm 100% chiều rộng trên điện thoại */
+    .exp-image,
+    .exp-text {
+        flex-basis: 100%; 
+        width: 100%;
+    }
+
+    .exp-image {
+        margin-bottom: 15px; /* Tạo khoảng cách giữa ảnh và chữ */
+    }
+
+    .nav-box {
+        width: 45%; /* Trên đt, mỗi hàng 2 hộp */
+        min-width: 150px;
+    }
 }
 
-/* Căn chỉnh cho TẤT CẢ icon (vì chúng đều là ảnh) */
-.social-btn img {
-    width: 100%; /* Cho ảnh lấp đầy nút tròn */
+@media (max-width: 500px) {
+    .nav-box {
+        width: 100%; /* Trên đt rất nhỏ, mỗi hàng 1 hộp */
+    }
+}
+.exp-image-carousel {
+    width: 100%;
+    height: 250px; /* Chiều cao cố định cho carousel */
+    overflow: hidden; /* Che đi phần ảnh bị tràn ra ngoài */
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.exp-carousel-track {
+    display: flex;
     height: 100%;
-    object-fit: cover; /* Đảm bảo ảnh vừa vặn, không bị méo */
-    vertical-align: middle; /* Căn ảnh vào giữa */
-
-}
-    
-
-/* Hiệu ứng HOVER (khi đưa chuột vào) */
-.social-btn:hover {
-    color: #fff;
-    transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.5s ease-in-out; /* Hiệu ứng trượt mượt mà */
 }
 
-/* Màu thương hiệu khi hover */
-.social-btn.facebook:hover {
-    background-color: #1877F2; /* Màu Facebook */
+.exp-carousel-track img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh vừa vặn */
+    flex-shrink: 0; /* Ngăn ảnh bị co lại */
+    border-radius: 8px; /* Bo góc ảnh bên trong carousel */
 }
 
-.social-btn.zalo:hover {
-    background-color: #0068FF; /* Màu Zalo */
+.exp-carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px; /* Khoảng cách giữa các chấm */
 }
 
-.social-btn.call:hover {
-    background-color: #4CAF50; /* Màu Call (Xanh lá) */
+.exp-dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Màu chấm mờ */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+.exp-dot.active {
+    background-color: #fff; /* Chấm sáng hơn khi hoạt động */
+}
 
-
-
-
+/* Responsive cho carousel ảnh trên điện thoại */
+@media (max-width: 768px) {
+    .exp-image-carousel {
+        height: 200px; /* Chiều cao nhỏ hơn trên di động */
+    }
+}
