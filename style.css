@@ -231,6 +231,12 @@ body {
     overflow: hidden; /* Ẩn phần thừa của ảnh Zalo nếu nó không tròn */
 
 }
+/* Căn chỉnh riêng cho icon Zalo (vì nó là ảnh) */
+.social-btn.zalo {
+    width: 60%; /* Tùy chỉnh kích thước ảnh Zalo cho vừa nút */
+    height: 60%;
+    vertical-align: middle; /* Căn ảnh vào giữa */
+}
 
 /* Hiệu ứng HOVER (khi đưa chuột vào) */
 .social-btn:hover {
