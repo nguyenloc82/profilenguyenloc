@@ -232,11 +232,26 @@ body {
 }
 
 /* Căn chỉnh riêng cho icon Zalo (vì nó là ảnh) */
-.social-btn.zalo img {
+.social-btn.Zalo img {
+    width: 60%; /* Tùy chỉnh kích thước ảnh Zalo cho vừa nút */
+    height: 60%;
+    vertical-align: middle; /* Căn ảnh vào giữa */
+    
+
+/* Căn chỉnh riêng cho icon Zalo (vì nó là ảnh) */
+.social-btn.Facebook img {
+    width: 60%; /* Tùy chỉnh kích thước ảnh Zalo cho vừa nút */
+    height: 60%;
+    vertical-align: middle; /* Căn ảnh vào giữa */
+    
+
+/* Căn chỉnh riêng cho icon Zalo (vì nó là ảnh) */
+.social-btn.Call img {
     width: 60%; /* Tùy chỉnh kích thước ảnh Zalo cho vừa nút */
     height: 60%;
     vertical-align: middle; /* Căn ảnh vào giữa */
 }
+    
 
 /* Hiệu ứng HOVER (khi đưa chuột vào) */
 .social-btn:hover {
@@ -257,5 +272,6 @@ body {
 .social-btn.call:hover {
     background-color: #4CAF50; /* Màu Call (Xanh lá) */
 }
+
 
 
