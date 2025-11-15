@@ -81,7 +81,7 @@ body {
 */
 .project-carousel {
     display: flex;
-    width: calc(2 * 4 * 320px); /* 2 (lần lặp) * 4 (số item) * 320px (chiều rộng 1 item) */
+   
     animation: scroll 30s linear infinite;
 }
 
